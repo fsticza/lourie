@@ -1,25 +1,12 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
-html {
-  height: 100%;
-}
-body {
-  height: 100%;
-}
-#root {
-  height: 100%;
-}
-
 .page-wrapper {
-  height: 100%;
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 .page {
-  min-height: 100%;
-  overflow-y: auto;
+  min-height: 100vh;
   position: relative;
   z-index: 1;
 }
