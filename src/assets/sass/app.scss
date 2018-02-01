@@ -1,0 +1,85 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+
+.page-wrapper {
+  height: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.page {
+  min-height: 100%;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  fill: currentColor
+}
+
+.page-title {
+
+}
+
+.page-description {
+
+}
+
+.navigation {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 50%;
+  margin-top: -8rem;
+}
+
+.navigation-link {
+  display: block;
+  margin: 5px;
+  padding: 10px;
+
+  &.is-active {
+    color: black;
+  }
+}
+
+#page-1 {
+  background: #171717;
+  color: #fff;
+}
+
+#page-2 {
+  background: #fff;
+  color: #666;
+}
+
+#page-3 {
+  background: #2A2824;
+  color: #fff;
+}
+
+#page-4 {
+  background: #FFC01C;
+  color: #333;
+}
+
+#page-5 {
+  background: #302140;
+  color: #fff;
+}
+
+#page-6 {
+  background: #EDEBE2;
+  color: #333;
+}
