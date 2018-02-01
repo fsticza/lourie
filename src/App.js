@@ -1,19 +1,44 @@
 import React, { Component } from 'react'
 import './assets/sass/app.css'
 import Page from './components/Page'
+import NavigationLink from './components/NavigationLink'
+import smoothScrollTo from './lib/smoothScrollTo'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {activePage: 1}
+
+    this.handleNavClick = this.handleNavClick.bind(this)
+  }
+
+  componentDidMount() {
+    smoothScrollTo(document.getElementById('page-1'))
+  }
+
+  handleNavClick(ev, pageNum) {
+    ev.preventDefault();
+    this.setState(prevState => ({
+      activePage: pageNum
+    }));
+    smoothScrollTo(document.getElementById(`page-${pageNum}`))
+  }
+
   render() {
+    const activeIdx = this.state.activePage
     return (
       <section className="page-wrapper">
 
         <nav className="navigation">
-          <a className="navigation-link" href="#page-1">1</a>
-          <a className="navigation-link" href="#page-2">2</a>
-          <a className="navigation-link" href="#page-3">3</a>
-          <a className="navigation-link" href="#page-4">4</a>
-          <a className="navigation-link" href="#page-5">5</a>
-          <a className="navigation-link" href="#page-6">6</a>
+          {
+            Array.from(new Array(6),(val,index)=>index+1).map(idx => {
+              return <NavigationLink
+                idx={idx}
+                key={idx}
+                activeIdx={activeIdx}
+                handleNavClick={this.handleNavClick} />
+            })
+          }
         </nav>
 
         <Page id="page-1" title="These are ordinaray backpacks,
