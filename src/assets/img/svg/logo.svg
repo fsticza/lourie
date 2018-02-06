@@ -1,39 +1,39 @@
 <svg width="95" height="38" viewBox="0 0 95 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>Logo</title>
-<desc>Lourie Tech Logo</desc>
-<g id="Canvas" transform="translate(-17375 -949)">
+<title>Group</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-17375 687)">
 <g id="Group">
 <g id="Group">
 <g id="Vector">
-<use xlink:href="#path0_fill" transform="translate(17375 961.3)" fill="currentColor"/>
+<use xlink:href="#path0_fill" transform="translate(17375 -674.7)" fill="currentColor"/>
 </g>
 <g id="Vector">
-<use xlink:href="#path1_fill" transform="translate(17381 949)" fill="currentColor"/>
-</g>
-</g>
-<g id="Group">
-<g id="Vector">
-<use xlink:href="#path2_fill" transform="translate(17415.9 966.479)" fill="currentColor"/>
-</g>
-<g id="Vector">
-<use xlink:href="#path3_fill" transform="translate(17436 966.492)" fill="currentColor"/>
-</g>
-<g id="Vector">
-<use xlink:href="#path4_fill" transform="translate(17447.1 966.464)" fill="currentColor"/>
-</g>
-<g id="Vector">
-<use xlink:href="#path5_fill" transform="translate(17457.4 966.492)" fill="currentColor"/>
-</g>
-<g id="Vector">
-<use xlink:href="#path6_fill" transform="translate(17462.9 966.479)" fill="currentColor"/>
+<use xlink:href="#path1_fill" transform="translate(17381 -687)" fill="currentColor"/>
 </g>
 </g>
 <g id="Group">
 <g id="Vector">
-<use xlink:href="#path7_fill" transform="translate(17423.9 968.523)" fill="currentColor"/>
+<use xlink:href="#path2_fill" transform="translate(17415.9 -669.521)" fill="currentColor"/>
 </g>
 <g id="Vector">
-<use xlink:href="#path8_fill" transform="translate(17426 966.3)" fill="currentColor"/>
+<use xlink:href="#path3_fill" transform="translate(17436 -669.508)" fill="currentColor"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path4_fill" transform="translate(17447.1 -669.536)" fill="currentColor"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path5_fill" transform="translate(17457.4 -669.508)" fill="currentColor"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="translate(17462.9 -669.521)" fill="currentColor"/>
+</g>
+</g>
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path7_fill" transform="translate(17423.9 -667.477)" fill="currentColor"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path8_fill" transform="translate(17426 -669.7)" fill="currentColor"/>
 </g>
 </g>
 </g>
