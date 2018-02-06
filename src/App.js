@@ -17,7 +17,7 @@ import deviceUrl from './assets/img/lourie-tech-device.png'
 const observerOptions = {
   root: null,
   rootMargin: "0px",
-  threshold: Array.from(new Array(100),(val,index) => index / 100)
+  threshold: [0, 0.01, 0.02, 0.03, 0.04, 0.05]
 }
 
 class App extends Component {
@@ -32,6 +32,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // no controls - no animation required
     if (document.body.offsetWidth < 750) {
       return
     }
@@ -42,12 +43,15 @@ class App extends Component {
   }
 
   intersectionCallback = entries => {
+    if (this.state.isScrolling) {
+      return
+    }
     entries.forEach(entry => {
       let box = entry.target;
       let visiblePct = entry.intersectionRatio * 100
       let index = Array.prototype.indexOf.call(box.parentNode.childNodes, box)
 
-      if (visiblePct > 1 && this.state.activeSection !== index && !this.state.isScrolling) {
+      if (visiblePct > 1 && this.state.activeSection !== index) {
         this.setPosition(index)
       }
     })

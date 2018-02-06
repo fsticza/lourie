@@ -4131,7 +4131,7 @@ a.text-dark:hover, a.text-dark:focus {
   position: relative; }
 
 .section {
-  padding: 4rem 0;
+  padding: 4rem 5%;
   min-height: 100vh;
   position: relative;
   z-index: 1; }
