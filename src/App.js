@@ -32,6 +32,9 @@ class App extends Component {
   }
 
   componentDidMount() {
+    if (document.body.offsetWidth < 750) {
+      return
+    }
     Array.from(new Array(6),(val,index)=>index+1).forEach(idx => {
       new IntersectionObserver(this.intersectionCallback, observerOptions)
         .observe(document.querySelector(`#section-${idx}`))
