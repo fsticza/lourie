@@ -1,10 +1,11 @@
 {
-  "main.css": "static/css/main.1e4f2588.css",
-  "main.css.map": "static/css/main.1e4f2588.css.map",
-  "main.js": "static/js/main.6d941ef5.js",
-  "main.js.map": "static/js/main.6d941ef5.js.map",
-  "static/media/lourie-bag-4.png": "static/media/lourie-bag-4.317a7e5c.png",
-  "static/media/lourie-tech-device.png": "static/media/lourie-tech-device.0ba1c123.png",
+  "main.css": "static/css/main.b11f2124.css",
+  "main.css.map": "static/css/main.b11f2124.css.map",
+  "main.js": "static/js/main.3a19c2f4.js",
+  "main.js.map": "static/js/main.3a19c2f4.js.map",
+  "static/media/bird.png": "static/media/bird.c4cb1992.png",
+  "static/media/drag-bag.png": "static/media/drag-bag.3afeba97.png",
+  "static/media/lourie-tech-device.png": "static/media/lourie-tech-device.ecc864be.png",
   "static/media/phone.png": "static/media/phone.1e91c475.png",
-  "static/media/sprite.svg": "static/media/sprite.a1b819f6.svg"
+  "static/media/sprite.svg": "static/media/sprite.e42989b3.svg"
 }
