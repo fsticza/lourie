@@ -22,6 +22,9 @@ const Navigation = ({activeIdx, handleNavClick}) => {
           })
         }
       </nav>
+      <svg className={`scroll ${activeIdx === 6 ? 'd-none' : ''}`} onClick={(ev) => handleNavClick(ev, activeIdx + 1)}>
+        <use xlinkHref={`${sprite}#scroll`}></use>
+      </svg>
     </div>
   )
 }

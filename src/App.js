@@ -7,12 +7,8 @@ import 'intersection-observer'
 
 import './assets/sass/app.css'
 import phoneUrl from './assets/img/phone.png'
-// import bag1Url from './assets/img/lourie-bag-1.png'
-// import bag2Url from './assets/img/lourie-bag-2.png'
-// import bag3Url from './assets/img/lourie-bag-3.png'
-import bag4Url from './assets/img/lourie-bag-4.png'
+import bag4Url from './assets/img/drag-bag.png'
 import deviceUrl from './assets/img/lourie-tech-device.png'
-// import birdUrl from './assets/img/bird.png'
 
 const observerOptions = {
   root: null,
@@ -83,21 +79,25 @@ class App extends Component {
           handleNavClick={this.handleNavClick} >
         </Navigation>
         <Section id="section-1">
-          <h1 className="section-title">
-            These are ordinaray backpacks,
-            but Lourie makes them all
-            smart and secure
-          </h1>
+          <div className="row">
+            <div className="col-md-10 offset-md-1">
+              <h1 className="section-title">
+                These are ordinaray backpacks,
+                but Lourie makes them all
+                smart and secure
+              </h1>
+            </div>
+          </div>
         </Section>
 
         <Section id="section-2">
           <div className="row text-right text-md-left align-items-center">
-            <div className="col-md-6 order-md-2">
+            <div className="col-md-4 order-md-2">
               <h1 className="section-title">
                 Lourie, the vigilant technology for your backpack
               </h1>
             </div>
-            <div className="col-md-6 order-md-1">
+            <div className="col-md-5 offset-md-2 order-md-1">
               <div className="px-4">
                 <img className="img-fluid" src={bag4Url} alt="Laurie Tech bag #4"/>
               </div>
@@ -107,7 +107,7 @@ class App extends Component {
 
         <Section id="section-3">
           <div className="row text-center text-md-left align-items-center">
-            <div className="col-md-6 order-md-2">
+            <div className="col-md-4 order-md-2">
               <h1 className="section-title">
                 Story
               </h1>
@@ -118,7 +118,7 @@ class App extends Component {
                 remains vigilant under all circumstances.
               </p>
             </div>
-            <div className="col-md-6 order-md-1">
+            <div className="col-md-4 offset-md-3 order-md-1">
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe className="embed-responsive-item"
                   title="Video about Lourie Tech"
@@ -131,7 +131,7 @@ class App extends Component {
 
         <Section id="section-4">
           <div className="row align-items-center">
-            <div className="col-md-6">
+            <div className="col-md-5 offset-md-1">
               <h1 className="section-title">
                 Lourie is the leading technology which alerts you whenever your bag is in danger.
               </h1>
@@ -143,31 +143,33 @@ class App extends Component {
                 bag and the phone and reminds the user if any of the two is left behind.
               </p>
             </div>
-            <div className="col-md-6">
-              <img src={deviceUrl} alt="Laurie Tech Device" />
+            <div className="col-md-5 text-center">
+              <img className="inline-img" src={deviceUrl} alt="Laurie Tech Device" />
             </div>
           </div>
         </Section>
 
         <Section id="section-5">
-          <div className="text-right text-md-center">
-            <h1 className="section-title">
-              Loosing valuables abraod can spoil the whole holiday. Lourie makes your
-              backpack vigilant to protect the user’s belongings all the time.
-            </h1>
-            <p className="section-description">
-              Lourie makes your bag vigilant. The integration of the Lourie technology in your
-              backpack’s design offers the user alarm and notification options in various situation. Lourie
-              has been developed for tourists and urban travellers, who like to enjoy vibrant big city life.
-              They are the typical victims of pickpocket. Lourie alerts the user right before the bag gets opened.
-              The alarm is also activated when the bag is moved or taken away from the owner.
-            </p>
+          <div className="row text-right text-md-center align-items-center">
+            <div className="col-md-10 offset-md-1">
+              <h1 className="section-title">
+                Loosing valuables abraod can spoil the whole holiday. Lourie makes your
+                backpack vigilant to protect the user’s belongings all the time.
+              </h1>
+              <p className="section-description">
+                Lourie makes your bag vigilant. The integration of the Lourie technology in your
+                backpack’s design offers the user alarm and notification options in various situation. Lourie
+                has been developed for tourists and urban travellers, who like to enjoy vibrant big city life.
+                They are the typical victims of pickpocket. Lourie alerts the user right before the bag gets opened.
+                The alarm is also activated when the bag is moved or taken away from the owner.
+              </p>
+            </div>
           </div>
         </Section>
 
         <Section id="section-6">
           <div className="row text-center text-md-left align-items-center">
-            <div className="col-md-6">
+            <div className="col-md-6 offset-md-1">
               <h1 className="section-title">
                 Lourie turns ordinary backpacks into indispensable travel companions. The smart bag
                 stays constantly in touch with the user’s smart phone
@@ -179,7 +181,7 @@ class App extends Component {
                 such as gps tracking of the bag, or magnetic closure.  Lourie technology integrates easily in any backpack’s design
               </p>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4 text-center">
               <img className="img-fluid" src={phoneUrl} alt="Laurie Tech phone" />
             </div>
           </div>
