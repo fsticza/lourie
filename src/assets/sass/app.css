@@ -4194,7 +4194,8 @@ a.text-dark:hover, a.text-dark:focus {
   display: none; }
   @media (min-width: 768px) {
     .navigation {
-      position: fixed; } }
+      position: fixed;
+      display: block; } }
 
 .scroll {
   position: absolute;
@@ -4320,3 +4321,28 @@ a.text-dark:hover, a.text-dark:focus {
 #section-6 {
   background-color: #EDEBE2;
   color: #333; }
+
+/* pulse in SVG */
+svg.pulse-svg {
+  overflow: visible; }
+  svg.pulse-svg .first-circle, svg.pulse-svg .second-circle, svg.pulse-svg .third-circle {
+    fill: currentColor;
+    transform: scale(0.5);
+    transform-origin: center center;
+    animation: pulse-me 3s linear infinite; }
+  svg.pulse-svg .second-circle {
+    animation-delay: 1s; }
+  svg.pulse-svg .third-circle {
+    animation-delay: 2s; }
+
+@keyframes pulse-me {
+  0% {
+    transform: scale(0.5);
+    opacity: 0; }
+  50% {
+    opacity: 0.1; }
+  70% {
+    opacity: 0.09; }
+  100% {
+    transform: scale(5);
+    opacity: 0; } }
