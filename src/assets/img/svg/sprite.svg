@@ -247,4 +247,9 @@
 </g>
 </g>
 
+</symbol><symbol id="circle" viewBox="0 0 10 10">
+  <circle class="circle first-circle" fill="currentColor" cx="5" cy="5" r="5"/>
+  <circle class="circle second-circle" fill="currentColor" cx="5" cy="5" r="5"/>
+  <circle class="circle third-circle" fill="currentColor" cx="5" cy="5" r="5"/>
+  <circle class="circle" fill="currentColor" cx="5" cy="5" r="5"/>
 </symbol></svg>

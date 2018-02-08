@@ -1,0 +1,6 @@
+<svg class="pulse-svg" width="10px" height="10px" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <circle class="circle first-circle" fill="currentColor" cx="5" cy="5" r="5"></circle>
+  <circle class="circle second-circle" fill="currentColor" cx="5" cy="5" r="5"></circle>
+  <circle class="circle third-circle" fill="currentColor" cx="5" cy="5" r="5"></circle>
+  <circle class="circle" fill="currentColor" cx="5" cy="5" r="5"></circle>
+</svg>
