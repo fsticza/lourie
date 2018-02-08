@@ -30,7 +30,7 @@ class App extends Component {
 
   componentDidMount() {
     // no controls - no animation required
-    if (document.body.offsetWidth < 750) {
+    if (document.body.offsetWidth < 768) {
       return
     }
     Array.from(new Array(6),(val,index)=>index+1).forEach(idx => {
@@ -65,6 +65,7 @@ class App extends Component {
     this.setState(prevState => ({
       isScrolling: true
     }))
+
     smoothScrollTo(document.getElementById(`section-${sectionNum}`), 200, 'linear', () => {
       this.setState(prevState => ({
         activeSection: sectionNum,

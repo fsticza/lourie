@@ -4177,25 +4177,42 @@ a.text-dark:hover, a.text-dark:focus {
 .logo {
   width: 100px;
   height: 40px;
-  position: fixed;
+  position: absolute;
   z-index: 4;
   left: 30px;
   top: 20px; }
+  @media (min-width: 768px) {
+    .logo {
+      position: fixed; } }
 
 .navigation {
-  position: fixed;
+  position: absolute;
   z-index: 4;
   left: 35px;
   bottom: 50%;
-  margin-bottom: -8rem; }
+  margin-bottom: -8rem;
+  display: none; }
+  @media (min-width: 768px) {
+    .navigation {
+      position: fixed; } }
 
 .scroll {
-  position: fixed;
+  position: absolute;
   z-index: 4;
-  width: 20px;
+  width: 12px;
   cursor: pointer;
-  left: 35px;
-  bottom: 10%; }
+  left: auto;
+  right: 10px;
+  top: 80vh;
+  bottom: auto; }
+  @media (min-width: 768px) {
+    .scroll {
+      position: fixed;
+      top: auto;
+      width: 20px;
+      left: 35px;
+      right: auto;
+      bottom: 10%; } }
 
 .navigation-link {
   display: block;
