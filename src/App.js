@@ -6,6 +6,7 @@ import smoothScrollTo from './lib/smoothScrollTo'
 import 'intersection-observer'
 
 import './assets/sass/app.css'
+import sprite from './assets/img/svg/sprite.svg'
 import phoneUrl from './assets/img/phone.png'
 import bag4Url from './assets/img/drag-bag.png'
 import deviceUrl from './assets/img/lourie-tech-device.png'
@@ -43,9 +44,11 @@ class App extends Component {
       return
     }
     entries.forEach(entry => {
-      let box = entry.target;
-      let visiblePct = entry.intersectionRatio * 100
-      let index = Array.prototype.indexOf.call(box.parentNode.childNodes, box)
+      const box = entry.target;
+      const visiblePct = entry.intersectionRatio * 100
+      const index = Array.from(box.parentNode.childNodes)
+        .filter(node => node.classList.contains('section'))
+        .indexOf(box) + 1
 
       if (visiblePct > 1 && this.state.activeSection !== index) {
         this.setPosition(index)
@@ -80,7 +83,7 @@ class App extends Component {
         </Navigation>
         <Section id="section-1">
           <div className="row">
-            <div className="col-md-10 offset-md-1">
+            <div className="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
               <h1 className="section-title">
                 These are ordinaray backpacks,
                 but Lourie makes them all
@@ -92,12 +95,12 @@ class App extends Component {
 
         <Section id="section-2">
           <div className="row text-right text-md-left align-items-center">
-            <div className="col-md-4 order-md-2">
+            <div className="col-md-4 col-lg-6 order-md-2">
               <h1 className="section-title">
                 Lourie, the vigilant technology for your backpack
               </h1>
             </div>
-            <div className="col-md-5 offset-md-2 order-md-1">
+            <div className="col-md-5 offset-md-2 col-lg-6 offset-lg-0 order-md-1">
               <div className="px-4">
                 <img className="img-fluid" src={bag4Url} alt="Laurie Tech bag #4"/>
               </div>
@@ -107,7 +110,7 @@ class App extends Component {
 
         <Section id="section-3">
           <div className="row text-center text-md-left align-items-center">
-            <div className="col-md-4 order-md-2">
+            <div className="col-md-4 col-lg-6 order-md-2">
               <h1 className="section-title">
                 Story
               </h1>
@@ -118,7 +121,7 @@ class App extends Component {
                 remains vigilant under all circumstances.
               </p>
             </div>
-            <div className="col-md-4 offset-md-3 order-md-1">
+            <div className="col-md-4 offset-md-3 col-lg-5 offset-lg-1 order-md-1">
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe className="embed-responsive-item"
                   title="Video about Lourie Tech"
@@ -131,7 +134,7 @@ class App extends Component {
 
         <Section id="section-4">
           <div className="row align-items-center">
-            <div className="col-md-5 offset-md-1">
+            <div className="col-md-5 offset-md-1 col-lg-6 offset-lg-0">
               <h1 className="section-title">
                 Lourie is the leading technology which alerts you whenever your bag is in danger.
               </h1>
@@ -143,15 +146,18 @@ class App extends Component {
                 bag and the phone and reminds the user if any of the two is left behind.
               </p>
             </div>
-            <div className="col-md-5 text-center">
-              <img className="inline-img" src={deviceUrl} alt="Laurie Tech Device" />
+            <div className="col-md-5 col-lg-6 text-center">
+              <img className="img-fluid inline-img" src={deviceUrl} alt="Laurie Tech Device" />
             </div>
           </div>
         </Section>
 
         <Section id="section-5">
           <div className="row text-right text-md-center align-items-center">
-            <div className="col-md-10 offset-md-1">
+            <div className="col-md-8 offset-md-2">
+              <svg className="bird-vector" alt="Lourie Tech bird">
+                <use xlinkHref={`${sprite}#bird`}></use>
+              </svg>
               <h1 className="section-title">
                 Loosing valuables abraod can spoil the whole holiday. Lourie makes your
                 backpack vigilant to protect the user’s belongings all the time.
@@ -169,7 +175,7 @@ class App extends Component {
 
         <Section id="section-6">
           <div className="row text-center text-md-left align-items-center">
-            <div className="col-md-6 offset-md-1">
+            <div className="col-md-6 offset-md-1 offset-lg-0">
               <h1 className="section-title">
                 Lourie turns ordinary backpacks into indispensable travel companions. The smart bag
                 stays constantly in touch with the user’s smart phone
@@ -181,7 +187,7 @@ class App extends Component {
                 such as gps tracking of the bag, or magnetic closure.  Lourie technology integrates easily in any backpack’s design
               </p>
             </div>
-            <div className="col-md-4 text-center">
+            <div className="col-md-4 col-lg-6 text-center">
               <img className="img-fluid" src={phoneUrl} alt="Laurie Tech phone" />
             </div>
           </div>
