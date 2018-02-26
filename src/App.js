@@ -1,59 +1,21 @@
 import React, { Component } from 'react'
 import Section from './components/Section'
-import Navigation from './components/Navigation'
 
 import smoothScrollTo from './lib/smoothScrollTo'
-import 'intersection-observer'
 
 import './assets/sass/app.css'
 import sprite from './assets/img/svg/sprite.svg'
 import phoneUrl from './assets/img/phone.png'
 import bag4Url from './assets/img/drag-bag.png'
 import deviceUrl from './assets/img/lourie-tech-device.png'
+import audioUrl from './assets/audio/goaway.mp3'
 
-const observerOptions = {
-  root: null,
-  rootMargin: "0px",
-  threshold: [0, 0.01, 0.02, 0.03, 0.04, 0.05]
-}
 
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      activeSection: 1,
-      isScrolling: false
-    }
     this.handleNavClick = this.handleNavClick.bind(this)
-    this.intersectionCallback = this.intersectionCallback.bind(this)
-  }
-
-  componentDidMount() {
-    // no controls - no animation required
-    if (document.body.offsetWidth < 768) {
-      return
-    }
-    Array.from(new Array(6),(val,index)=>index+1).forEach(idx => {
-      new IntersectionObserver(this.intersectionCallback, observerOptions)
-        .observe(document.querySelector(`#section-${idx}`))
-    })
-  }
-
-  intersectionCallback = entries => {
-    if (this.state.isScrolling) {
-      return
-    }
-    entries.forEach(entry => {
-      const box = entry.target;
-      const visiblePct = entry.intersectionRatio * 100
-      const index = Array.from(box.parentNode.childNodes)
-        .filter(node => node.classList.contains('section'))
-        .indexOf(box) + 1
-
-      if (visiblePct > 1 && this.state.activeSection !== index) {
-        this.setPosition(index)
-      }
-    })
+    this.handleDragStart = this.handleDragStart.bind(this)
   }
 
   handleNavClick(ev, sectionNum) {
@@ -61,28 +23,18 @@ class App extends Component {
     this.setPosition(sectionNum)
   }
 
-  setPosition (sectionNum) {
-    this.setState(prevState => ({
-      isScrolling: true
-    }))
+  handleDragStart (ev) {
+    document.getElementById('goaway').play()
+  }
 
-    smoothScrollTo(document.getElementById(`section-${sectionNum}`), 200, 'linear', () => {
-      this.setState(prevState => ({
-        activeSection: sectionNum,
-        isScrolling: false
-      }))
-    })
+  setPosition (sectionNum) {
+    smoothScrollTo(document.getElementById(`section-${sectionNum}`))
   }
 
   render() {
-    const activeIdx = this.state.activeSection
     return (
       <section className="section-wrapper">
-        <Navigation
-          activeIdx={activeIdx}
-          handleNavClick={this.handleNavClick} >
-        </Navigation>
-        <Section id="section-1">
+        <Section idx={0} handleNavClick={this.handleNavClick}>
           <div className="row">
             <div className="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
               <h1 className="section-title">
@@ -94,7 +46,7 @@ class App extends Component {
           </div>
         </Section>
 
-        <Section id="section-2">
+        <Section idx={1} handleNavClick={this.handleNavClick}>
           <div className="row text-right text-md-left align-items-center">
             <div className="col-md-4 col-lg-6 order-md-2">
               <h1 className="section-title">
@@ -103,13 +55,15 @@ class App extends Component {
             </div>
             <div className="col-md-5 offset-md-2 col-lg-6 offset-lg-0 order-md-1">
               <div className="px-4">
-                <img className="img-fluid" src={bag4Url} alt="Laurie Tech bag #4"/>
+                <img className="img-fluid" onDragStart={this.handleDragStart}
+                  style={{zIndex: 10, position: 'relative'}}
+                  draggable="true" src={bag4Url} alt="Laurie Tech bag #4"/>
               </div>
             </div>
           </div>
         </Section>
 
-        <Section id="section-3">
+        <Section idx={2} handleNavClick={this.handleNavClick}>
           <div className="row text-center text-md-left align-items-center">
             <div className="col-md-4 col-lg-6 order-md-2">
               <h1 className="section-title">
@@ -133,7 +87,7 @@ class App extends Component {
           </div>
         </Section>
 
-        <Section id="section-4">
+        <Section idx={3} handleNavClick={this.handleNavClick}>
           <div className="row align-items-center">
             <div className="col-md-5 offset-md-1 col-lg-6 offset-lg-0">
               <h1 className="section-title">
@@ -153,7 +107,7 @@ class App extends Component {
           </div>
         </Section>
 
-        <Section id="section-5">
+        <Section idx={4} handleNavClick={this.handleNavClick}>
           <div className="row text-right text-md-center align-items-center">
             <div className="col-md-8 offset-md-2">
               <svg className="bird-vector" alt="Lourie Tech bird">
@@ -174,7 +128,7 @@ class App extends Component {
           </div>
         </Section>
 
-        <Section id="section-6">
+        <Section idx={5} handleNavClick={this.handleNavClick}>
           <div className="row text-center text-md-left align-items-center">
             <div className="col-md-6 offset-md-1 offset-lg-0">
               <h1 className="section-title">
@@ -193,8 +147,11 @@ class App extends Component {
             </div>
           </div>
         </Section>
-
+        <audio id="goaway">
+          <source src={audioUrl} type="audio/mpeg" />
+        </audio>
       </section>
+
     );
   }
 }

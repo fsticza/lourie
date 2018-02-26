@@ -7,7 +7,7 @@ const colors = ['#fff', '#666', '#fff', '#333', '#fff', '#333']
 
 const Navigation = ({activeIdx, handleNavClick}) => {
   return (
-    <div style={{ color : colors[activeIdx - 1]}}>
+    <div className="navigation-wrapper" style={{ color : colors[activeIdx - 1]}}>
       <svg className="logo" alt="Lourie Tech logo">
         <use xlinkHref={`${sprite}#logo`}></use>
       </svg>

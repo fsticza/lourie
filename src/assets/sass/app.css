@@ -4185,6 +4185,19 @@ a.text-dark:hover, a.text-dark:focus {
     .logo {
       position: fixed; } }
 
+.navigation-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  clip: rect(0, 100vh, 100vh, 0);
+  clip-path: rect(0, 100vh, 100vh, 0); }
+  @media (min-width: 576px) {
+    .navigation-wrapper {
+      display: block; } }
+
 .navigation {
   position: absolute;
   z-index: 4;
@@ -4250,6 +4263,8 @@ a.text-dark:hover, a.text-dark:focus {
       align-items: center;
       background-position: 45% 15%;
       background-size: 1313px 1281px; } }
+  #section-1 .navigation-wrapper {
+    display: block; }
   #section-1 .section-title {
     position: absolute;
     top: 200px;

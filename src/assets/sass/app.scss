@@ -73,6 +73,21 @@ $font-family-sans-serif: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe U
   }
 }
 
+.navigation-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  clip: rect(0, 100vh, 100vh, 0);
+  clip-path: rect(0, 100vh, 100vh, 0);
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+}
+
 .navigation {
   position: absolute;
   z-index: 4;
@@ -142,6 +157,10 @@ $font-family-sans-serif: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe U
     align-items: center;
     background-position: 45% 15%;
     background-size: 1313px 1281px;
+  }
+
+  .navigation-wrapper {
+    display: block;
   }
 
   .section-title {
